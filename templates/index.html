@@ -2,28 +2,49 @@
 <html>
 <head>
   <title>Activity Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<h1>Activity Tracker</h1>
+  <div class="container">
+    <h1>Activity Tracker ⚡</h1>
 
-<form action="/add" method="post">
-  <input type="text" name="name" placeholder="Activity name" required>
-  <button type="submit">Add Activity</button>
-</form>
+    <div class="statistics">
+      <p>
+        Active: <strong>{{ active_count }}</strong> | 
+        Stopped: <strong>{{ stopped_count }}</strong> | 
+        Avg time: <strong>{{ avg_time if avg_time else '-' }}</strong>
+      </p>
+    </div>
 
-<h2>Activities</h2>
-<ul>
-  {% for act in activities %}
-    <li>
-      {{ act[0] }} - {{ act[1] }} - {{ act[2] }}
-      {% if act[2] == "active" %}
-        <a href="/stop/{{ act[0] }}">Stop</a>
-      {% else %}
-        <a href="/time/{{ act[0] }}">Time spent</a>
-      {% endif %}
-    </li>
-  {% endfor %}
-</ul>
+    <form action="/add" method="post" class="add-form">
+      <input type="text" name="name" placeholder="Activity name" required>
+      <button type="submit">Add Activity</button>
+    </form>
 
+    <h2>Active Activities 🟢</h2>
+    <ul class="activity-list">
+      {% for act in activities %}
+        {% if act[2] == "active" %}
+          <li>
+            <span>{{ act[0] }} (Started: {{ act[1] }})</span>
+            <a class="stop-btn" href="/stop/{{ act[0] }}">Stop 🛑</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    <h2>Stopped Activities 🔵</h2>
+    <ul class="activity-list stopped">
+      {% for act in activities %}
+        {% if act[2] == "stopped" %}
+          <li>
+            <span>
+              {{ act[0] }} (Started: {{ act[1] }}, Stopped: {{ act[3]}}, Time: {{ act[4] }})
+            </span>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
 </body>
 </html>

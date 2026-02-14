@@ -1,0 +1,143 @@
+/* Ogólne tło i font */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #f6d365, #fda085);
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
+}
+
+/* Główny kontener */
+.container {
+  width: 700px;
+  max-width: 95%;
+  margin: 50px auto;
+  background-color: #ffffffdd;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Nagłówki */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+h1 {
+  color: #e67e22;
+}
+
+h2 {
+  color: #2980b9;
+}
+
+/* Formularz dodawania aktywności */
+.add-form {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.add-form input {
+  padding: 12px;
+  width: 60%;
+  margin-right: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.add-form button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #27ae60;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-form button:hover {
+  background-color: #2ecc71;
+  transform: scale(1.05);
+}
+
+/* Lista aktywności */
+.activity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.activity-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+/* Active */
+.activity-list li span {
+  color: #34495e;
+}
+
+.activity-list li:hover {
+  transform: translateX(3px);
+}
+
+.activity-list li a {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Stop button - Active tasks */
+.stop-btn {
+  background-color: #e74c3c;
+}
+
+.stop-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Time button - Stopped tasks */
+.time-btn {
+  background-color: #3498db;
+}
+
+.time-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Stopped tasks style */
+.activity-list.stopped li {
+  background-color: #f1f2f6;
+  color: #7f8c8d;
+}
+
+/* Responsywność */
+@media (max-width: 800px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .add-form input {
+    width: 55%;
+    margin-bottom: 10px;
+  }
+
+  .add-form button {
+    width: 40%;
+  }
+}
