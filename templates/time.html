@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time Spent</title>
+</head>
+<body>
+<h1>Time Spent on {{ activity }}</h1>
+{% if spent %}
+<p>{{ spent }}</p>
+{% else %}
+<p>Activity not stopped yet.</p>
+{% endif %}
+<a href="/">Back</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Activity Tracker</title>
+</head>
+<body>
+<h1>Activity Tracker</h1>
+
+<form action="/add" method="post">
+  <input type="text" name="name" placeholder="Activity name" required>
+  <button type="submit">Add Activity</button>
+</form>
+
+<h2>Activities</h2>
+<ul>
+  {% for act in activities %}
+    <li>
+      {{ act[0] }} - {{ act[1] }} - {{ act[2] }}
+      {% if act[2] == "active" %}
+        <a href="/stop/{{ act[0] }}">Stop</a>
+      {% else %}
+        <a href="/time/{{ act[0] }}">Time spent</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+</body>
+</html>
