@@ -14,12 +14,12 @@ Track your activities, stop them, and see how much time you spent on each task, 
 
 ## Screenshots
 
-![Screenshot](screenshoot.png)
+![Screenshot](screenshot.png)
 
 ## Installation
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Fawlo/activity-tracker-app.git
+git clone https://github.com/Fawloqq/activity-tracker-app.git
 cd activity-tracker-app
