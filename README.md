@@ -14,7 +14,7 @@ Track your activities, stop them, and see how much time you spent on each task, 
 
 ## Screenshots
 
-![Screenshot](screenshot.png)
+![Screenshot](assets/screenshot.png)
 
 ## Installation
 
